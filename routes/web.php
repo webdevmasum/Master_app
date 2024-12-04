@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Web\Backend\Product\CategoryController;
 use App\Http\Controllers\Web\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,12 @@ Route::get('/why', function () { return view('frontend.layout.why'); })->name('w
 Route::get('/product', function () { return view('frontend.layout.product'); })->name('product');
 Route::get('/subscribe', function () { return view('frontend.layout.subscribe'); })->name('subscribe');
 Route::get('/client', function () { return view('frontend.layout.client'); })->name('client');
+
+
+
+
+// These routes are for backend
+Route::resource('categories', CategoryController::class);
 
 
 
